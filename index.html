@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <title>Services and Factories</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+        crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="./app/app.js"></script>
+    <script src="./app/sessionFactory.js"></script>
+    <script src="./app/formattingFactory.js"></script>
+    <script src="./app/sessionService.js"></script>
+    <script src="./app/sessionController.js"></script>
+</head>
+
+<body ng-controller="sessionController as vm">
+    <div class="container">
+        <h1 class="text-center">Services and Factories</h1>
+        <hr>
+        <div class="form-group row">
+          <div class="col-sm-2 col-sm-offset-2">
+              <label>Name</label>
+          </div>
+          <div class="col-sm-6">
+              <input type="text" class="form-control" ng-model="vm.model.name">
+          </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="col-sm-2 col-sm-offset-2">
+            <label>Nickname</label>
+        </div>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" ng-model="vm.model.nickname">
+        </div>
+    </div>
+    
+    <!-- session service -->
+
+    <div class="form-group row">
+        <div class="col-sm-7 col-sm-offset-4">
+            <input type="button" class="btn btn-primary" value="Save with Service" ng-click="vm.setServiceSession()"/>
+            <input type="button" class="btn btn-default" value="Retrieve from Service" ng-click="vm.getServiceSession()" />
+            <input type="button" class="btn btn-default" value="Clear from Service" ng-click="vm.clearServiceSession()" />
+        </div>
+    </div>
+    <!-- factory session  -->
+    <div class="form-group row">
+        <div class="col-sm-8 col-sm-offset-4">
+            <input type="button" class="btn btn-primary" value="Save with Factory" ng-click="vm.setFactorySession()"/>
+            <input type="button" class="btn btn-default" value="Retrieve from Factory" ng-click="vm.getFactorySession()" />
+            <input type="button" class="btn btn-default" value="Clear from Factory" ng-click="vm.clearFactorySession()" />
+        </div>
+    </div>
+    <pre>{{vm.model | json}}</pre>
+  
+    </div>
+
+    
+  
+</body>
+
+</html>
